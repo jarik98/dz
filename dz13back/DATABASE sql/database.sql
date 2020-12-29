@@ -1,0 +1,13 @@
+DROP DATABASE IF EXISTS new1;
+CREATE DATABASE new1 CHAR SET utf8;
+USE new1;
+SELECT database();
+
+
+CREATE TABLE todo(
+ ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+ name VARCHAR(45) NOT NULL,
+ DONE BOOLEAN NOT NULL
+);
+
+INSERT INTO todo(name,DONE) values ('work',true),('shop',false);

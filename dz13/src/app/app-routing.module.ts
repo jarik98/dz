@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
-import { MyPageComponent } from './my-page/my-page.component';
-import { UsersComponent } from './users/users.component';
+
+
+
+
 
 const routes: Routes = [
-  { path: 'dashboard' , component: DashboardComponent},
-  { path: 'users' , component: UsersComponent},
-  { path: 'my-page' , component: MyPageComponent},
-  { path: 'login', component: LoginComponent},
+  { path: 'dashboard', loadChildren: () => import('./dashboard-module/dashboard-module.module').then(m=>m.DashboardModuleModule)},
+  { path: 'users' , loadChildren: ()=> import('./users-module/users-module.module').then(m=> m.UsersModuleModule)},
+  { path: 'my-page' ,loadChildren: () => import('./my-page-module/my-page-module.module').then(m=>m.MyPageModuleModule)},
+  { path: 'login', loadChildren: () => import('./login-module/login-module.module').then(m=>m.LoginModuleModule)},
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
 

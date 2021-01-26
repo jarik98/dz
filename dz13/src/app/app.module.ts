@@ -4,10 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { UsersComponent } from './users/users.component';
-import { MyPageComponent } from './my-page/my-page.component';
+
+
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { ReactiveFormsModule, NgControl,FormsModule } from '@angular/forms';
@@ -17,13 +15,12 @@ import {  MatIconModule } from  '@angular/material/icon';
 import { MatSidenavModule } from  '@angular/material/sidenav';
 import {  MatListModule} from  '@angular/material/list';
 
+import { AgGridModule } from 'ag-grid-angular';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    DashboardComponent,
-    UsersComponent,
-    MyPageComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +33,9 @@ import {  MatListModule} from  '@angular/material/list';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    AgGridModule.withComponents([]),
+    HttpClientModule
 
   ],
   providers: [],

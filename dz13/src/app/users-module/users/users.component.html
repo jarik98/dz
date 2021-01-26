@@ -1,0 +1,16 @@
+<p>users works!</p>
+<ag-grid-angular
+    #agGrid
+    style="width: 1200px; height: 500px;"
+    class="ag-theme-alpine"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    rowSelection="multiple"
+    [paginationAutoPageSize]="true"
+    [pagination]="true"
+    colDef.editable=true
+
+>
+</ag-grid-angular>
+<button (click)="getSelectedRows()">Get Selected Rows</button>
+<app-create></app-create>

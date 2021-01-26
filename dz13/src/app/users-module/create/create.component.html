@@ -1,0 +1,22 @@
+<p>create works!</p>
+<!-- <p>{{email.className}}</p> -->
+
+<form action="" #form='ngForm' id='newUser'>
+  <input type='text' class="form-control" name="name" #name ngModel placeholder="nickname" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" required>
+
+  <p *ngIf='name.classList.contains("ng-invalid") && name.classList.contains("ng-dirty")'>Тільки латиниця</p>
+
+  <input type='text' class="form-control" name="password" #password ngModel placeholder="password" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" required>
+
+  <p *ngIf='password.classList.contains("ng-invalid") && password.classList.contains("ng-dirty")'>Тільки латиниця</p>
+
+  <input type='text' class="form-control" ngModel='' name="email" #email ngModel placeholder="email" required pattern="(\W|^)[\w.+\-]*@gmail\.com(\W|$)" required>
+
+  <p *ngIf='email.classList.contains("ng-invalid") && email.classList.contains("ng-dirty")'>Повинно закінчуватися на @gmail.com</p>
+  <!-- <p>{{email.classList.contains('ng-invalid')}}</p> -->
+
+
+</form>
+
+<button   *ngIf='form.valid' class="btn btn-primary" (click)="createUser('newuserr','paas2','3j@gmail.com')">Add user</button>
+<button disabled   *ngIf='!form.valid' class="btn btn-primary">Add user</button>
